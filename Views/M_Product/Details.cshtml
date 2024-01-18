@@ -1,0 +1,59 @@
+﻿@model e_commerce.Models.M_Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Product Picture
+        </dt>
+        <dd>
+            <img height="75px" src="@Url.Content(Model.Product_Picture)" />
+        </dd>
+
+        <dt>
+            Product Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Product_Name)
+        </dd>
+
+        <dt>
+            Product Description
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Product_Description)
+        </dd>
+
+        <dt>
+            Category
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.M_Category.Category_Name)
+        </dd>
+
+        <dt>
+            Sale Price
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Product_Sale_Price)
+        </dd>
+
+        <dt>
+            Purchase Price
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Product_Purchase_Price)
+        </dd>
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("Index", "M_Product")" class="btn btn-default"> Back to List </a> |
+    <a href="@Url.Action("Edit", "M_Product", new { id=Model.Product_Id })" class="btn btn-warning glyphicon glyphicon-edit"> Edit </a>
+</p>

@@ -1,0 +1,48 @@
+﻿@model e_commerce.Models.M_Admin
+
+<h2>Details</h2>
+
+<div>
+    <h4>Admin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Admin_Name)
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Admin_Email)
+        </dd>
+
+        <dt>
+            Phone Number
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Admin_Contact)
+        </dd>
+
+        <dt>
+            Address
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Admin_Address)
+        </dd>
+
+        <dt>
+            Password
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Admin_Password)
+        </dd>
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("Index", "M_Admin")" class="btn btn-default"> Back to List </a> |
+    <a href="@Url.Action("Edit", "M_Admin", new { id=Model.Admin_Id })" class="btn btn-warning glyphicon glyphicon-edit"> Edit </a>
+</p>

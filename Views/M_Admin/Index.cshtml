@@ -1,0 +1,53 @@
+﻿@model IEnumerable<e_commerce.Models.M_Admin>
+
+<h2>Index</h2>
+
+<p>
+    <a href="@Url.Action("Create", "M_Admin")" class="btn btn-lg btn-success"> Create New Admin Account </a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Phone Number
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Password
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Admin_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Admin_Email)
+            </td>            
+            <td>
+                @Html.DisplayFor(modelItem => item.Admin_Contact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Admin_Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Admin_Password)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "M_Admin", new { id=item.Admin_Id })" class="btn btn-warning glyphicon glyphicon-edit"></a> |
+                <a href="@Url.Action("Details", "M_Admin", new { id=item.Admin_Id })" class="btn btn-success glyphicon glyphicon-book"></a> |
+                <a href="@Url.Action("Delete", "M_Admin", new { id=item.Admin_Id })" class="btn btn-danger glyphicon glyphicon-trash"></a>
+            </td>
+        </tr>
+     }
+
+</table>

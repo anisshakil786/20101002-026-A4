@@ -1,0 +1,66 @@
+﻿@model e_commerce.Models.M_Product
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Product Picture
+        </dt>
+        <dd>
+            <img height="75px" src="@Url.Content(Model.Product_Picture)" />
+        </dd>
+
+        <dt>
+            Product Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Product_Name)
+        </dd>
+
+        <dt>
+            Product Description
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Product_Description)
+        </dd>
+
+        <dt>
+            Category Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.M_Category.Category_Name)
+        </dd>
+
+        <dt>
+            Sale Price
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Product_Sale_Price)
+        </dd>
+
+        <dt>
+            Purchase Price
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Product_Purchase_Price)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <a href="@Url.Action("Index", "M_Product")" class="btn btn-default"> Back to List </a> |
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        </div>
+     }
+</div>
